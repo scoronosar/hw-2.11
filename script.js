@@ -94,6 +94,7 @@ const renderComments = () => {
   };
 
 renderComments();
+likes();
 
 const initReplayClickListener = () => {
     const commentsToAnswer = document.querySelectorAll('.comment');
@@ -104,9 +105,8 @@ const initReplayClickListener = () => {
       });
     }
   }
-
-likes();
 initReplayClickListener();
+likes();
 
 ButtonElement.addEventListener("click", () => {
     UserName.style.backgroundColor = "white";
@@ -136,6 +136,6 @@ ButtonElement.addEventListener("click", () => {
         UserComment.value = '';
     }
         renderComments();
-        likes();
         initReplayClickListener();
+        likes();
 });
