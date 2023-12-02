@@ -51,8 +51,8 @@ const likes = () => {
     const likeButtons = document.querySelectorAll('.like-button');
     for (const likeButton of likeButtons) {
       likeButton.addEventListener('click', (event) => {
-        const index = likeButton.dataset.index;
         event.stopPropagation();
+        const index = likeButton.dataset.index;
         if (Users[index].userLike === false ) {
             Users[index].paint = '-active-like';
             Users[index].likes += 1;
@@ -90,11 +90,10 @@ const renderComments = () => {
       `})
       .join('');
       ListElement.innerHTML = UsersHTML;
+      initReplayClickListener();
       likes();
   };
 
-renderComments();
-likes();
 
 const initReplayClickListener = () => {
     const commentsToAnswer = document.querySelectorAll('.comment');
@@ -105,8 +104,8 @@ const initReplayClickListener = () => {
       });
     }
   }
-initReplayClickListener();
-likes();
+
+  renderComments();
 
 ButtonElement.addEventListener("click", () => {
     UserName.style.backgroundColor = "white";
